@@ -36,16 +36,9 @@ while True :
     colorUpper = (44, 255, 255)
     frame = imutils.resize(frame, width=600)
     hsv = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
-
-    # construct a mask for the color "green", then perform
-    # a series of dilations and erosions to remove any small
-    # blobs left in the mask
     mask = cv.inRange(hsv, colorLower, colorUpper)
     mask = cv.erode(mask, None, iterations=2)
     mask = cv.dilate(mask, None, iterations=2)
-
-    # find contours in the mask and initialize the current
-    # (x, y) center of the ball
     cnts = cv.findContours(mask.copy(), cv.RETR_EXTERNAL,
                             cv.CHAIN_APPROX_SIMPLE)[-2]
     print(cnts)
