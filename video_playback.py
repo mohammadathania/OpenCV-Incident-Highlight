@@ -20,12 +20,13 @@ cv2.createTrackbar('Frame Number', 'Video Playback', 0,len(frames), nothing)
 while True:
     frame_number = cv2.getTrackbarPos('Frame Number', 'Video Playback')
     print(frame_number)
-    try:
-        img = frames[frame_number]
-    except :
-        print('Frames Completed')
-    cv2.imshow('Video Playback', img)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+    while True :
+        try:
+            img = frames[frame_number]
+        except :
+            print('Frames Completed')
+        cv2.imshow('Video Playback', img)
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
 
 cv2.destroyAllWindows()
