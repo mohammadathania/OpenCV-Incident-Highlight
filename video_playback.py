@@ -24,7 +24,7 @@ while True:
         try:
             img = frames[frame_number]
         except :
-            print('Frames Completed')
+            print('Frames Completed Successfully')
         cv2.imshow('Video Playback', img)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
