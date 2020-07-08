@@ -1,2 +1,4 @@
 # OpenCV-Incident-Highlight
-Python Project
+GUI application which allows you to track movements of any objects.
+
+
